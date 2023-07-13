@@ -1,14 +1,17 @@
-module Definitions exposing (Definition, Spec, fromSpec)
+module Definitions exposing (Entry, Spec, fromSpec)
+
+import DefinitionData
+import DefinitionTypes
 
 
-type alias Definition =
-    String
+type alias Entry =
+    DefinitionTypes.Entry
 
 
 type alias Spec =
-    {}
+    DefinitionTypes.Spec
 
 
-fromSpec : Spec -> List Definition
+fromSpec : Spec -> List Entry
 fromSpec _ =
-    [ "placeholder" ]
+    DefinitionData.all

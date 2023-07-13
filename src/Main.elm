@@ -2,8 +2,9 @@ module Main exposing (..)
 
 import Browser
 import Browser.Events
-import Definitions exposing (Definition)
-import Html exposing (Html, div, text)
+import Definitions
+import Html exposing (Html, div, span, text)
+import Html.Attributes exposing (class)
 import Json.Decode as JD
 import Random exposing (Seed)
 
@@ -74,9 +75,20 @@ subscriptions _ =
         []
 
 
-definitionView : Definition -> Html msg
-definitionView definition =
-    text definition
+definitionView : Definitions.Entry -> Html msg
+definitionView entry =
+    let
+        lexeme : String
+        lexeme =
+            [ entry.includesKanji, entry.katakana, entry.hirigana ]
+                |> List.filter (\s -> String.length s > 0)
+                |> String.join " / "
+    in
+    div [ class "entry" ]
+        [ span [] [ text <| lexeme ++ " (" ++ entry.romanji ++ ")" ]
+        , span [] [ text entry.definition ]
+        , span [] [ text <| "May indicate: " ++ entry.mayIndicate ]
+        ]
 
 
 view model =
