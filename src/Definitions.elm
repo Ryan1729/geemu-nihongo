@@ -1,7 +1,7 @@
 module Definitions exposing (Entry, Spec, fromSpec)
 
 import DefinitionData
-import DefinitionTypes
+import DefinitionTypes exposing (entryStrings)
 
 
 type alias Entry =
@@ -13,5 +13,16 @@ type alias Spec =
 
 
 fromSpec : Spec -> List Entry
-fromSpec _ =
+fromSpec spec =
     DefinitionData.all
+        |> List.filter (matchesSearch spec.search)
+
+
+matchesSearch : String -> Entry -> Bool
+matchesSearch search entry =
+    if search == "" then
+        True
+
+    else
+        entryStrings entry
+            |> List.any (String.contains search)

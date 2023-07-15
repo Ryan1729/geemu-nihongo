@@ -6,6 +6,7 @@ module DefinitionTypes exposing
     , Katakana
     , Romanji
     , Spec
+    , entryStrings
     )
 
 
@@ -43,5 +44,17 @@ type alias Entry =
     }
 
 
+entryStrings : Entry -> List String
+entryStrings entry =
+    [ entry.hirigana
+    , entry.katakana
+    , entry.includesKanji
+    , entry.romanji
+    , entry.definition
+    , entry.mayIndicate
+    ]
+
+
 type alias Spec =
-    {}
+    { search : String
+    }

@@ -3,8 +3,9 @@ module Main exposing (..)
 import Browser
 import Browser.Events
 import Definitions
-import Html exposing (Html, div, span, text)
-import Html.Attributes exposing (class)
+import Html exposing (Html, div, header, input, span, text)
+import Html.Attributes exposing (class, placeholder, value)
+import Html.Events exposing (onInput)
 import Json.Decode as JD
 import Random exposing (Seed)
 
@@ -16,15 +17,6 @@ main =
         , view = view
         , subscriptions = subscriptions
         }
-
-
-type alias SiteModel =
-    { definitionsSpec : Definitions.Spec
-    }
-
-
-type alias Model =
-    Result String SiteModel
 
 
 type alias Flags =
@@ -43,12 +35,21 @@ with b a =
     ( a, b )
 
 
+type alias SiteModel =
+    { definitionsSpec : Definitions.Spec
+    }
+
+
+type alias Model =
+    Result String SiteModel
+
+
 init : JD.Value -> ( Model, Cmd Msg )
 init flags =
     case JD.decodeValue decodeFlags flags of
         Ok { seed } ->
             Ok
-                { definitionsSpec = {}
+                { definitionsSpec = { search = "" }
                 }
                 |> with Cmd.none
 
@@ -61,11 +62,30 @@ init flags =
 
 type Msg
     = Tick
+    | ChangeSearch String
 
 
 update msg model =
-    case msg of
-        Tick ->
+    case model of
+        Ok site ->
+            case msg of
+                Tick ->
+                    site
+                        |> Ok
+                        |> with Cmd.none
+
+                ChangeSearch search ->
+                    let
+                        definitionsSpec =
+                            site.definitionsSpec
+                    in
+                    { site
+                        | definitionsSpec = { definitionsSpec | search = search }
+                    }
+                        |> Ok
+                        |> with Cmd.none
+
+        Err err ->
             model
                 |> with Cmd.none
 
@@ -91,12 +111,24 @@ definitionView entry =
         ]
 
 
+definitionsView : Definitions.Spec -> Html msg
+definitionsView spec =
+    Definitions.fromSpec spec
+        |> List.map definitionView
+        |> div []
+
+
 view model =
     case model of
         Ok site ->
-            Definitions.fromSpec site.definitionsSpec
-                |> List.map definitionView
-                |> div []
+            div []
+                [ header []
+                    [ input [ placeholder "Search", value site.definitionsSpec.search, onInput ChangeSearch ] []
+                    ]
+                , Html.node "main"
+                    []
+                    [ definitionsView site.definitionsSpec ]
+                ]
 
         Err err ->
             text err
