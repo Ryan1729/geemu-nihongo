@@ -89,4 +89,46 @@ all =
 
     -- TODO add something like エックスジェンダ if we actually observe it in a game.
     -- A different way to say the same thing may be what is actually used in practice.
+    , { hirigana = "はい"
+      , katakana = notApplicable
+      , includesKanji = notApplicable
+      , romanji = "hai"
+      , definition = "yes; affirmative statement."
+      , mayIndicate = "that an option to answer yes to a question is presented"
+      }
+    , { hirigana = "いいえ"
+      , katakana = notApplicable
+      , includesKanji = notApplicable
+      , romanji = "iie"
+      , definition = "no; negative statement"
+      , mayIndicate = "that an option to answer no to a question is presented"
+      }
+    , { hirigana = "きん"
+      , katakana = notApplicable
+      , includesKanji = "金"
+      , romanji = "kin"
+      , definition = "gold"
+      , mayIndicate = "in-game money"
+      }
+    , { hirigana = "らんく"
+      , katakana = "ランク"
+      , includesKanji = notApplicable
+      , romanji = "ranku"
+      , definition = "rank"
+      , mayIndicate = "an option to go to a ranking screen"
+      }
+    , { hirigana = "うける"
+      , katakana = notApplicable
+      , includesKanji = "受ける"
+      , romanji = "ukeru"
+      , definition = "get/receive"
+      , mayIndicate = "an option to take an item"
+      }
+    , { hirigana = "ことわる"
+      , katakana = notApplicable
+      , includesKanji = "断る"
+      , romanji = "kotowaru"
+      , definition = "refuse/reject"
+      , mayIndicate = "an option to refuse an item"
+      }
     ]
