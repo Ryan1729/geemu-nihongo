@@ -131,4 +131,25 @@ all =
       , definition = "refuse/reject"
       , mayIndicate = "an option to refuse an item"
       }
+    , { hirigana = "つづける"
+      , katakana = notApplicable
+      , includesKanji = "続ける"
+      , romanji = "tsuzukeru"
+      , definition = "continue"
+      , mayIndicate = "option to continue/unpause"
+      }
+    , { hirigana = "やりなおす"
+      , katakana = notApplicable
+      , includesKanji = "やり直す"
+      , romanji = "yarinaosu"
+      , definition = "to redo/start over/resume"
+      , mayIndicate = "option to resume or restart"
+      }
+    , { hirigana = "あきらめる"
+      , katakana = notApplicable
+      , includesKanji = "諦める"
+      , romanji = "akirameru"
+      , definition = "to abandon/to resign/give up"
+      , mayIndicate = "an option to quit/give up"
+      }
     ]
