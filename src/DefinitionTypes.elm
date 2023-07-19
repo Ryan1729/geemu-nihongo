@@ -4,6 +4,7 @@ module DefinitionTypes exposing
     , Hirigana
     , IncludesKanji
     , Katakana
+    , OnlyKanji
     , Romanji
     , Spec
     , entryStrings
@@ -19,6 +20,10 @@ type alias Katakana =
 
 
 type alias IncludesKanji =
+    String
+
+
+type alias OnlyKanji =
     String
 
 

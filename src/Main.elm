@@ -2,12 +2,13 @@ module Main exposing (..)
 
 import Browser
 import Browser.Events
-import Definitions
-import Html exposing (Html, div, header, input, span, text)
+import Definitions exposing (Definitions)
+import Html exposing (Html, button, div, header, input, span, text)
 import Html.Attributes exposing (class, placeholder, value)
-import Html.Events exposing (onInput)
+import Html.Events exposing (onClick, onInput)
 import Json.Decode as JD
 import Random exposing (Seed)
+import Set
 
 
 main =
@@ -35,8 +36,14 @@ with b a =
     ( a, b )
 
 
+type KanjiMenuState
+    = Closed
+    | Open
+
+
 type alias SiteModel =
     { definitionsSpec : Definitions.Spec
+    , kanjiMenuState : KanjiMenuState
     }
 
 
@@ -50,6 +57,7 @@ init flags =
         Ok { seed } ->
             Ok
                 { definitionsSpec = { search = "" }
+                , kanjiMenuState = Closed
                 }
                 |> with Cmd.none
 
@@ -61,19 +69,15 @@ init flags =
 
 
 type Msg
-    = Tick
-    | ChangeSearch String
+    = ChangeSearch String
+    | TypeIn String
+    | ToggleKanjiMenuState
 
 
 update msg model =
     case model of
         Ok site ->
             case msg of
-                Tick ->
-                    site
-                        |> Ok
-                        |> with Cmd.none
-
                 ChangeSearch search ->
                     let
                         definitionsSpec =
@@ -81,6 +85,31 @@ update msg model =
                     in
                     { site
                         | definitionsSpec = { definitionsSpec | search = search }
+                    }
+                        |> Ok
+                        |> with Cmd.none
+
+                TypeIn input ->
+                    -- Looks like we'll need to use a port to insert at the cursor position :/
+                    let
+                        definitionsSpec =
+                            site.definitionsSpec
+                    in
+                    { site
+                        | definitionsSpec = { definitionsSpec | search = definitionsSpec.search ++ input }
+                    }
+                        |> Ok
+                        |> with Cmd.none
+
+                ToggleKanjiMenuState ->
+                    { site
+                        | kanjiMenuState =
+                            case site.kanjiMenuState of
+                                Closed ->
+                                    Open
+
+                                Open ->
+                                    Closed
                     }
                         |> Ok
                         |> with Cmd.none
@@ -111,23 +140,53 @@ definitionView entry =
         ]
 
 
-definitionsView : Definitions.Spec -> Html msg
-definitionsView spec =
-    Definitions.fromSpec spec
+definitionsView : Definitions -> Html msg
+definitionsView definitions =
+    definitions
         |> List.map definitionView
         |> div []
+
+
+searchKeyboardKey : String -> Html Msg
+searchKeyboardKey input =
+    button [ onClick (TypeIn input) ]
+        [ text input
+        ]
 
 
 view model =
     case model of
         Ok site ->
+            let
+                spec : Definitions.Spec
+                spec =
+                    site.definitionsSpec
+
+                definitions : Definitions
+                definitions =
+                    Definitions.fromSpec spec
+
+                kanjiMenu : Html Msg
+                kanjiMenu =
+                    case site.kanjiMenuState of
+                        Closed ->
+                            text ""
+
+                        Open ->
+                            Definitions.usedKanji definitions
+                                |> Set.toList
+                                |> List.map searchKeyboardKey
+                                |> div []
+            in
             div []
                 [ header []
-                    [ input [ placeholder "Search", value site.definitionsSpec.search, onInput ChangeSearch ] []
+                    [ input [ placeholder "Search", value spec.search, onInput ChangeSearch ] []
+                    , button [ onClick ToggleKanjiMenuState ] [ text "Kanji" ]
                     ]
+                , kanjiMenu
                 , Html.node "main"
                     []
-                    [ definitionsView site.definitionsSpec ]
+                    [ definitionsView definitions ]
                 ]
 
         Err err ->
