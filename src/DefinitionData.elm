@@ -152,4 +152,18 @@ all =
       , definition = "to abandon/to resign/give up"
       , mayIndicate = "an option to quit/give up"
       }
+    , { hirigana = "えらぶ"
+      , katakana = notApplicable
+      , includesKanji = "選ぶ"
+      , romanji = "erabu"
+      , definition = "to select/to choose"
+      , mayIndicate = "that particular controls are used to select menu options"
+      }
+    , { hirigana = "けってい"
+      , katakana = notApplicable
+      , includesKanji = "決定"
+      , romanji = "kettei"
+      , definition = "determination/decision"
+      , mayIndicate = "that particular controls are used to input menu options"
+      }
     ]
