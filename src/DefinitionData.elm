@@ -166,4 +166,25 @@ all =
       , definition = "determination/decision"
       , mayIndicate = "that particular controls are used to input menu options"
       }
+    , { hirigana = "ぱずる"
+      , katakana = "パズル"
+      , includesKanji = notApplicable
+      , romanji = "pazuru"
+      , definition = "puzzle"
+      , mayIndicate = "an option for a puzzle mode"
+      }
+    , { hirigana = "じっくり"
+      , katakana = notApplicable
+      , includesKanji = notApplicable
+      , romanji = "jikkuri"
+      , definition = "deliberately, slowly and carefully"
+      , mayIndicate = "an untimed or slower game mode"
+      }
+    , { hirigana = "はいすこあ"
+      , katakana = "ハイスコア"
+      , includesKanji = notApplicable
+      , romanji = "haisukoa"
+      , definition = "high score"
+      , mayIndicate = "that the player got a high score, or the presence of a high score table"
+      }
     ]
