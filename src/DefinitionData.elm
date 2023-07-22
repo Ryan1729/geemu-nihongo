@@ -187,4 +187,25 @@ all =
       , definition = "high score"
       , mayIndicate = "that the player got a high score, or the presence of a high score table"
       }
+    , { hirigana = "すすむ"
+      , katakana = notApplicable
+      , includesKanji = "進む"
+      , romanji = "susuma"
+      , definition = "go forward/advance"
+      , mayIndicate = "option to move to the next screen/level/stage"
+      }
+    , { hirigana = "すてーじくりあ"
+      , katakana = "ステージクリア"
+      , includesKanji = notApplicable
+      , romanji = "suteeji kuria"
+      , definition = "stage clear"
+      , mayIndicate = "that the player has cleared the stage/level/screen"
+      }
+    , { hirigana = "こうしん"
+      , katakana = notApplicable
+      , includesKanji = "更新"
+      , romanji = "koushin"
+      , definition = "breaking a record/update/replacement"
+      , mayIndicate = "a record was broken. See ハイスコア"
+      }
     ]
