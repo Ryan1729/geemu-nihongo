@@ -208,4 +208,18 @@ all =
       , definition = "breaking a record/update/replacement"
       , mayIndicate = "a record was broken. See ハイスコア"
       }
+    , { hirigana = "りとらい"
+      , katakana = "リトライ"
+      , includesKanji = notApplicable
+      , romanji = "ritorai"
+      , definition = "retry"
+      , mayIndicate = "an option to retry a level/stage/screen"
+      }
+    , { hirigana = "すてえじゆ"
+      , katakana = "ステージ上"
+      , includesKanji = notApplicable
+      , romanji = "suteejiyu"
+      , definition = "stage"
+      , mayIndicate = "an option to select a level/stage/screen"
+      }
     ]
