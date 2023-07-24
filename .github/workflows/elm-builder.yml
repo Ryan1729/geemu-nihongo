@@ -1,0 +1,48 @@
+# This is a workflow that makes sure the given elm files have been compiled, making a new commit if needed.
+
+name: Elm Builder
+
+on:
+  push:
+    branches:
+      - main
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  ensure-built:
+    permissions: write-all
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: jorelali/setup-elm@v5
+        with:
+          elm-version: 0.19.1
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+
+      - name: Fill in a git identity
+        run: |
+          git config --global user.email "elm-builder@example.com"
+          git config --global user.name "Elm Builder"
+
+      - name: Checkout main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: git checkout main
+
+      - name: Build 
+        run: elm make --optimize --output=elm.js src/Main.elm
+
+      - name: Push changes, if any
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --exit-code elm.js
+          then
+            echo "Nothing to commit, so not commiting"
+          else
+            echo "Attempting to commit"
+            git add . && git commit -m 'Build unbuilt elm' && git push && echo "committed!"
+          fi
+
