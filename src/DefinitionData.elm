@@ -222,4 +222,25 @@ all =
       , definition = "stage"
       , mayIndicate = "an option to select a level/stage/screen"
       }
+    , { hirigana = "はじめから"
+      , katakana = notApplicable
+      , includesKanji = "初めから"
+      , romanji = "hajimekara"
+      , definition = "from the beginning"
+      , mayIndicate = "a new game option"
+      }
+    , { hirigana = "つづきから"
+      , katakana = notApplicable
+      , includesKanji = "続きから"
+      , romanji = "tsudukikara"
+      , definition = "\"continue from\""
+      , mayIndicate = "a continue game option"
+      }
+    , { hirigana = "せってい"
+      , katakana = notApplicable
+      , includesKanji = "設定"
+      , romanji = "setti"
+      , definition = "settings; options; preferences; configuration."
+      , mayIndicate = "a settings option"
+      }
     ]
