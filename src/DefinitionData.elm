@@ -243,4 +243,25 @@ all =
       , definition = "settings; options; preferences; configuration."
       , mayIndicate = "a settings option"
       }
+    , { hirigana = "しゅうりょう"
+      , katakana = notApplicable
+      , includesKanji = "終了"
+      , romanji = "shuuryou"
+      , definition = "end; close."
+      , mayIndicate = "a settings option"
+      }
+    , { hirigana = "あいてむ"
+      , katakana = notApplicable
+      , includesKanji = "アイテム"
+      , romanji = "aitemu"
+      , definition = "item"
+      , mayIndicate = "an item menu"
+      }
+    , { hirigana = "そうび"
+      , katakana = notApplicable
+      , includesKanji = "装備"
+      , romanji = "soubi"
+      , definition = "equipment"
+      , mayIndicate = "an equipment/weapons menu"
+      }
     ]
