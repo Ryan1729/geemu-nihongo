@@ -264,4 +264,32 @@ all =
       , definition = "equipment"
       , mayIndicate = "an equipment/weapons menu"
       }
+    , { hirigana = "すてえたす"
+      , katakana = "ステータス"
+      , includesKanji = notApplicable
+      , romanji = "suteetasu"
+      , definition = "status"
+      , mayIndicate = "an option to go to a status screen or show a status menu"
+      }
+    , { hirigana = "ぎぶあっぷ"
+      , katakana = "ギブアップ"
+      , includesKanji = notApplicable
+      , romanji = "gibuappu"
+      , definition = "give up"
+      , mayIndicate = "a quit menu"
+      }
+    , { hirigana = "しんぐるもおど"
+      , katakana = "シングルモード"
+      , includesKanji = notApplicable
+      , romanji = "shingurumoodo"
+      , definition = "single mode"
+      , mayIndicate = "an option for a single-player mode"
+      }
+    , { hirigana = "ぱあてぃいもおど"
+      , katakana = "パーティーモード"
+      , includesKanji = notApplicable
+      , romanji = "paathiimoodo"
+      , definition = "party mode"
+      , mayIndicate = "an option for a multiplayer mode"
+      }
     ]

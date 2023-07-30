@@ -5352,7 +5352,14 @@ var $author$project$DefinitionData$all = _List_fromArray(
 		{a: 'stage', b: 'すてえじゆ', c: $author$project$DefinitionData$notApplicable, d: 'ステージ上', e: 'an option to select a level/stage/screen', f: 'suteejiyu'},
 		{a: 'from the beginning', b: 'はじめから', c: '初めから', d: $author$project$DefinitionData$notApplicable, e: 'a new game option', f: 'hajimekara'},
 		{a: '\"continue from\"', b: 'つづきから', c: '続きから', d: $author$project$DefinitionData$notApplicable, e: 'a continue game option', f: 'tsudukikara'},
-		{a: 'settings; options; preferences; configuration.', b: 'せってい', c: '設定', d: $author$project$DefinitionData$notApplicable, e: 'a settings option', f: 'setti'}
+		{a: 'settings; options; preferences; configuration.', b: 'せってい', c: '設定', d: $author$project$DefinitionData$notApplicable, e: 'a settings option', f: 'setti'},
+		{a: 'end; close.', b: 'しゅうりょう', c: '終了', d: $author$project$DefinitionData$notApplicable, e: 'a settings option', f: 'shuuryou'},
+		{a: 'item', b: 'あいてむ', c: 'アイテム', d: $author$project$DefinitionData$notApplicable, e: 'an item menu', f: 'aitemu'},
+		{a: 'equipment', b: 'そうび', c: '装備', d: $author$project$DefinitionData$notApplicable, e: 'an equipment/weapons menu', f: 'soubi'},
+		{a: 'status', b: 'すてえたす', c: $author$project$DefinitionData$notApplicable, d: 'ステータス', e: 'an option to go to a status screen or show a status menu', f: 'suteetasu'},
+		{a: 'give up', b: 'ぎぶあっぷ', c: $author$project$DefinitionData$notApplicable, d: 'ギブアップ', e: 'a quit menu', f: 'gibuappu'},
+		{a: 'single mode', b: 'しんぐるもおど', c: $author$project$DefinitionData$notApplicable, d: 'シングルモード', e: 'an option for a single-player mode', f: 'shingurumoodo'},
+		{a: 'party mode', b: 'ぱあてぃいもおど', c: $author$project$DefinitionData$notApplicable, d: 'パーティーモード', e: 'an option for a multiplayer mode', f: 'paathiimoodo'}
 	]);
 var $elm$core$List$any = F2(
 	function (isOkay, list) {
