@@ -5359,7 +5359,10 @@ var $author$project$DefinitionData$all = _List_fromArray(
 		{a: 'status', b: 'すてえたす', c: $author$project$DefinitionData$notApplicable, d: 'ステータス', e: 'an option to go to a status screen or show a status menu', f: 'suteetasu'},
 		{a: 'give up', b: 'ぎぶあっぷ', c: $author$project$DefinitionData$notApplicable, d: 'ギブアップ', e: 'a quit menu', f: 'gibuappu'},
 		{a: 'single mode', b: 'しんぐるもおど', c: $author$project$DefinitionData$notApplicable, d: 'シングルモード', e: 'an option for a single-player mode', f: 'shingurumoodo'},
-		{a: 'party mode', b: 'ぱあてぃいもおど', c: $author$project$DefinitionData$notApplicable, d: 'パーティーモード', e: 'an option for a multiplayer mode', f: 'paathiimoodo'}
+		{a: 'party mode', b: 'ぱあてぃいもおど', c: $author$project$DefinitionData$notApplicable, d: 'パーティーモード', e: 'an option for a multiplayer mode', f: 'paathiimoodo'},
+		{a: 'easy', b: 'やきしい', c: '易しい', d: $author$project$DefinitionData$notApplicable, e: 'an option for an easy mode', f: 'yakishii'},
+		{a: 'normal', b: 'ふつう', c: '普通', d: $author$project$DefinitionData$notApplicable, e: 'an option for a normal mode', f: 'futsuu'},
+		{a: 'difficult; hard', b: 'むずかしい', c: '難しい', d: $author$project$DefinitionData$notApplicable, e: 'an option for an hard mode', f: 'muzukashii'}
 	]);
 var $elm$core$List$any = F2(
 	function (isOkay, list) {
@@ -5613,7 +5616,7 @@ var $elm$core$Set$fromList = function (list) {
 	return A3($elm$core$List$foldl, $elm$core$Set$insert, $elm$core$Set$empty, list);
 };
 var $author$project$Definitions$isKanji = function (_char) {
-	return ((_char > '㌀') && (_char <= '\u4DBF')) || (((_char > '一') && (_char <= '\u9FFF')) || (((_char > '豈') && (_char <= '\uFAFF')) || (((_char > '𠀀') && (_char <= '\uD87A\uDFEF')) || (((_char > '丽') && (_char <= '\uD87E\uDE1F')) || ((_char > '\uD880\uDC00') && (_char <= '\uD888\uDFAF'))))));
+	return ((_char > '㌀') && (_char <= '䶿')) || (((_char > '一') && (_char <= '鿿')) || (((_char > '豈') && (_char <= '\uFAFF')) || (((_char > '𠀀') && (_char <= '\uD87A\uDFEF')) || (((_char > '丽') && (_char <= '\uD87E\uDE1F')) || ((_char > '𰀀') && (_char <= '\uD888\uDFAF'))))));
 };
 var $author$project$Definitions$usedKanji = function (definitions) {
 	return $elm$core$Set$fromList(

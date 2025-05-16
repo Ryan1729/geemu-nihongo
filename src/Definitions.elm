@@ -95,14 +95,14 @@ isKanji char =
     (char
         > '㌀'
         && char
-        <= '\u{4DBF}'
+        <= '䶿'
      -- '\u{3300}' - '\u{4DBF}': CJK Compatibility, CJK Unified Ideographs Extension A
      -- We intentionally leave out the Yijing Hexagram Symbols (4DC0-4DFF)
     )
         || (char
                 > '一'
                 && char
-                <= '\u{9FFF}'
+                <= '鿿'
             -- '\u{4E00}' - '\u{9FFF}': CJK Unified Ideographs
            )
         || (char
@@ -124,7 +124,7 @@ isKanji char =
             -- '\u{2F800}' - '\u{2FA1F}': CJK Compatibility Ideographs Supplement
            )
         || (char
-                > '\u{30000}'
+                > '𰀀'
                 && char
                 <= '\u{323AF}'
             -- '\u{30000}' - '\u{323AF}': CJK Unified Ideographs Extension G, H

@@ -292,4 +292,25 @@ all =
       , definition = "party mode"
       , mayIndicate = "an option for a multiplayer mode"
       }
+    , { hirigana = "やきしい"
+      , katakana = notApplicable
+      , includesKanji = "易しい"
+      , romanji = "yakishii"
+      , definition = "easy"
+      , mayIndicate = "an option for an easy mode"
+      }
+    , { hirigana = "ふつう"
+      , katakana = notApplicable
+      , includesKanji = "普通"
+      , romanji = "futsuu"
+      , definition = "normal"
+      , mayIndicate = "an option for a normal mode"
+      }
+    , { hirigana = "むずかしい"
+      , katakana = notApplicable
+      , includesKanji = "難しい"
+      , romanji = "muzukashii"
+      , definition = "difficult; hard"
+      , mayIndicate = "an option for an hard mode"
+      }
     ]
