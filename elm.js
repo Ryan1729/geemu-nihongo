@@ -5362,7 +5362,11 @@ var $author$project$DefinitionData$all = _List_fromArray(
 		{a: 'party mode', b: 'ぱあてぃいもおど', c: $author$project$DefinitionData$notApplicable, d: 'パーティーモード', e: 'an option for a multiplayer mode', f: 'paathiimoodo'},
 		{a: 'easy', b: 'やきしい', c: '易しい', d: $author$project$DefinitionData$notApplicable, e: 'an option for an easy mode', f: 'yakishii'},
 		{a: 'normal', b: 'ふつう', c: '普通', d: $author$project$DefinitionData$notApplicable, e: 'an option for a normal mode', f: 'futsuu'},
-		{a: 'difficult; hard', b: 'むずかしい', c: '難しい', d: $author$project$DefinitionData$notApplicable, e: 'an option for an hard mode', f: 'muzukashii'}
+		{a: 'difficult; hard', b: 'むずかしい', c: '難しい', d: $author$project$DefinitionData$notApplicable, e: 'an option for an hard mode', f: 'muzukashii'},
+		{a: 'one person', b: 'ひとり', c: '一人;1人', d: $author$project$DefinitionData$notApplicable, e: 'an option for a single-player mode', f: 'hitori'},
+		{a: 'two person', b: 'ふたり', c: '二人;2人', d: $author$project$DefinitionData$notApplicable, e: 'an option for a two-player mode', f: 'futari'},
+		{a: 'to play', b: 'あるぶ', c: '遊ぶ', d: $author$project$DefinitionData$notApplicable, e: 'an option to begin play', f: 'arubu'},
+		{a: 'fighting (against); taking on (an opponent)', b: 'たいせん', c: '対戦', d: $author$project$DefinitionData$notApplicable, e: 'an option for a versus mode', f: 'taisen'}
 	]);
 var $elm$core$List$any = F2(
 	function (isOkay, list) {

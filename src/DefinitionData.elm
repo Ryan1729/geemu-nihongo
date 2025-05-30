@@ -313,4 +313,32 @@ all =
       , definition = "difficult; hard"
       , mayIndicate = "an option for an hard mode"
       }
+    , { hirigana = "ひとり"
+      , katakana = notApplicable
+      , includesKanji = "一人;1人"
+      , romanji = "hitori"
+      , definition = "one person"
+      , mayIndicate = "an option for a single-player mode"
+      }
+    , { hirigana = "ふたり"
+      , katakana = notApplicable
+      , includesKanji = "二人;2人"
+      , romanji = "futari"
+      , definition = "two person"
+      , mayIndicate = "an option for a two-player mode"
+      }
+    , { hirigana = "あるぶ"
+      , katakana = notApplicable
+      , includesKanji = "遊ぶ"
+      , romanji = "arubu"
+      , definition = "to play"
+      , mayIndicate = "an option to begin play"
+      }
+    , { hirigana = "たいせん"
+      , katakana = notApplicable
+      , includesKanji = "対戦"
+      , romanji = "taisen"
+      , definition = "fighting (against); taking on (an opponent)"
+      , mayIndicate = "an option for a versus mode"
+      }
     ]
